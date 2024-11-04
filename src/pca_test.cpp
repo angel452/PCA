@@ -57,17 +57,17 @@ int main(int argc, char* argv[])
 	}
 	//------------------------------------------------------------------
 	const int ndim = 3;
-	//const int npuntos = 6;
-	const int npuntos = 500;
+	const int npuntos = 6;
+	//const int npuntos = 500;
 
 	Eigen::Matrix<float, npuntos, ndim> pca_data_matrix;
 	Eigen::Matrix<float, npuntos, ndim> pca_center_matrix;
 
 	// Ejemplo 1...
-	pca_data_matrix = generarPuntos(npuntos); 
+	//pca_data_matrix = generarPuntos(npuntos); 
 
-	// Ejemplo 3... 
-	/*
+	// Ejemplo 2... 
+	
 	pca_data_matrix << 
 		126.0, 78.0, -1.0,
 		128.0, 80.0, -1.0,
@@ -75,14 +75,13 @@ int main(int argc, char* argv[])
 		130.0, 82.0, 0.0,
 		130.0, 84.0, 1.0,
 		132.0, 86.0, 1.0;
-	*/
-
+	
 
 	pca_t<float> pca;
 	pca.set_input(pca_data_matrix);
 	pca.compute();
 
-	/*
+	
 	std::cout
 		<< "Input Matrix:		\n" << pca.get_input_matrix() << std::endl << std::endl
 		<< "Centered Matrix:	\n" << pca.get_centered_matrix() << std::endl << std::endl
@@ -91,7 +90,7 @@ int main(int argc, char* argv[])
 		<< "Mean Matrix:		\n" << pca.get_mean() << std::endl << std::endl
 		<< "Eigen Values:		\n" << pca.get_eigen_values() << std::endl << std::endl
 		<< "Eigen Vectors:		\n" << pca.get_eigen_vectors() << std::endl << std::endl;
-	*/
+	
 
 	const auto& reprojection = pca.reprojection();
 	auto error = (pca_data_matrix - reprojection).norm();

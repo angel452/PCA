@@ -51,16 +51,18 @@ ax.scatter(x,y,z)
 # Graficar recta PCA
 recta = leerRectaPCA()
 # --> Para el grafico oficial
+'''
 ax.plot3D(  [-500*recta[0], 500*recta[0]],
             [-500*recta[1], 500*recta[1]], 
-            [-500*recta[2], 500*recta[2]], 'black' )
-            
-# --> Para el grafico de la presentacion
+            [-500*recta[2], 500*recta[2]], 'black' )      
 '''
+
+# --> Para el grafico de la presentacion
+
 ax.plot3D(  [-7*recta[0], 7*recta[0]],
             [-7*recta[1], 7*recta[1]], 
             [-7*recta[2], 7*recta[2]], 'black' )
-'''
+
             
 # Graficar proyecciones
 xP,yP,zP = leerProyecciones()

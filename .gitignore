@@ -1,0 +1,7 @@
+*.txt
+.vscode/*
+CMakeFiles/*
+Makefile
+*.zip
+cmake_install.cmake
+cmake_eigen
